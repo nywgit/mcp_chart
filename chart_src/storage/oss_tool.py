@@ -1,9 +1,8 @@
 import os
 from dotenv import load_dotenv
-
 from chart_src.storage import QiniuTool
-from chart_src.storage.aliyun_tool import AliYunTool
-from chart_src.storage.minio_tool import MinioTool
+from chart_src.storage import AliYunTool
+from chart_src.storage import MinioTool
 
 
 def get_oss_tool():
@@ -16,7 +15,7 @@ def get_oss_tool():
     secret_key = os.getenv("SECRET_KEY", '')
 
     region = os.getenv("REGION", '')
-    prefix = os.getenv("PREFIX", "charts")
+    prefix = os.getenv("PREFIX", '')
 
     if oss_type == '':
         return None

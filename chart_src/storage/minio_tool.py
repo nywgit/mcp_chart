@@ -4,11 +4,11 @@ from typing import BinaryIO, Union
 from io import BytesIO
 from minio import Minio
 from datetime import timedelta
-import magic  # <-- 新增
+import magic
 
 
 class MinioTool:
-    def __init__(self, endpoint, bucket_name, access_key, secret_key, prefix: str = "charts"):
+    def __init__(self, endpoint, bucket_name, access_key, secret_key, prefix: str):
         self.client = Minio(endpoint, access_key, secret_key, secure=False)
         self.bucket_name = bucket_name
         self.prefix = prefix
@@ -34,6 +34,7 @@ class MinioTool:
 
     def upload_from_memory(self, image_bytes: Union[bytes, BinaryIO], expires: int = 3600) -> str:
         key = f"{self.prefix.strip('/')}/{uuid.uuid4().hex}.png"
+        print("key:", key)
 
         # 统一转换为 bytes 和 stream
         if isinstance(image_bytes, bytes):

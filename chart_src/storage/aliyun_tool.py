@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 
 class AliYunTool:
-    def __init__(self, region, bucket_name, prefix: str = "charts"):
+    def __init__(self, region, bucket_name, prefix: str):
         # 从环境变量加载密钥
         load_dotenv()
         credentials_provider = oss.credentials.EnvironmentVariableCredentialsProvider()

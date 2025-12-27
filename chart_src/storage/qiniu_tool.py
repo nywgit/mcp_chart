@@ -3,7 +3,7 @@ import qiniu
 from dotenv import load_dotenv
 
 class QiniuTool:
-    def __init__(self, domain, bucket_name, access_key, secret_key, prefix: str = "charts"):
+    def __init__(self, domain, bucket_name, access_key, secret_key, prefix: str):
         """
         :param domain: 七牛云域名
         :param bucket_name: 空间名称
