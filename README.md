@@ -2,7 +2,8 @@
 [English](README_en.md)
 ## 简介
 
-这是一个基于 Python 的图表生成工具，支持生成折线图、柱状图和饼状图。该工具使用 matplotlib 作为图表渲染引擎，并集成了七牛云对象存储功能，可以将生成的图表上传到云端，返回给AI一个URL或Base64格式的数据。
+这是一个基于 Python 的图表生成工具，支持生成折线图、柱状图和饼状图。
+该工具使用 matplotlib 作为图表渲染引擎，并集成了对象存储功能，可以将生成的图表上传到云端，返回给AI一个URL或Base64格式的数据。
 
 默认使用 Streamable 传输。
 
@@ -36,7 +37,7 @@ pip install -r requirements.txt
 
 如果未配置OSS或不可用，会自动输出Base64数据，以确保兼容性。
 
- `.env` 文件并配置OSS相关信息：
+`.env` 文件并配置OSS相关信息：
 
 ```env
 OSS_TYPE=aliyun minio qiniu
